@@ -29,8 +29,6 @@ public class ReentrantReadWriteLockDemo {
 class Count2{
 	final ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
 	public void get() {
-		
-		
 		lock.readLock().lock();
 		System.out.println(Thread.currentThread().getName()+" read begin");
 		
@@ -44,7 +42,6 @@ class Count2{
 	}
 	
 	public void put() {
-		
 		lock.writeLock().lock();
 		System.out.println(Thread.currentThread().getName()+" write begin");
 		
