@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.*;
+import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.*;
 
@@ -77,5 +78,39 @@ public class Foo5 {
          */
         Map<String,Set<Integer>> map4 = Arrays.stream(students).collect(groupingBy(Student::getName,mapping(Student::getScore,toSet())));
         map4.forEach((x,y)-> System.out.println(x+"->"+y));
+    }
+
+    public void peek1(int x) {
+        System.out.println(Thread.currentThread().getName() + ":->peek1->" + x);
+    }
+
+    public void peek2(int x) {
+        System.out.println(Thread.currentThread().getName() + ":->peek2->" + x);
+    }
+
+    public void peek3(int x) {
+        System.out.println(Thread.currentThread().getName() + ":->final result->" + x);
+    }
+
+    /**
+     * peek，监控方法
+     * 串行流和并行流的执行顺序
+     */
+    @org.junit.Test
+    public void testPeek() {
+        Stream<Integer> stream = Stream.iterate(1, x -> x + 1).limit(10);
+        stream.peek(this::peek1).filter(x -> x > 5)
+                .peek(this::peek2).filter(x -> x < 8)
+                .peek(this::peek3)
+                .forEach(System.out::println);
+    }
+
+    @Test
+    public void testPeekPal() {
+        Stream<Integer> stream = Stream.iterate(1, x -> x + 1).limit(10).parallel();
+        stream.peek(this::peek1).filter(x -> x > 5)
+                .peek(this::peek2).filter(x -> x < 8)
+                .peek(this::peek3)
+                .forEach(System.out::println);
     }
 }
