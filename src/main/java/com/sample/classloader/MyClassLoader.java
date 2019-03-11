@@ -7,7 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class MyClassLoader extends ClassLoader{
-    private final static Path DEFAULT_CLASS_DIR = Paths.get("D:\\Study\\Code\\sample8\\target\\classes");
+    private final static Path DEFAULT_CLASS_DIR = Paths.get("D:","classloader1");
 
     private final Path classDir;
 
@@ -32,8 +32,7 @@ public class MyClassLoader extends ClassLoader{
 
     private byte[] readClassBytes(String name) throws ClassNotFoundException{
         String classPath = name.replace(".","/");
-        Path classFullPath = classDir.resolve(Paths.get(classPath,".class"));
-
+        Path classFullPath = classDir.resolve(Paths.get(classPath+".class"));
         if ( !classFullPath.toFile().exists() )
             throw new ClassNotFoundException("The class " + name + " not found.");
 

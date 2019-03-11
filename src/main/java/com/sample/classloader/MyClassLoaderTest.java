@@ -10,7 +10,7 @@ public class MyClassLoaderTest {
     NoSuchMethodException, InvocationTargetException {
         MyClassLoader classLoader = new MyClassLoader();
         Class<?> aClass = classLoader.loadClass("com.sample.classloader.HelloWorld");
-        System.out.println(aClass.getClassLoader());
+        System.out.println("classloader:"+aClass.getClassLoader());
 
         Object helloword = aClass.newInstance();
         System.out.println(helloword);
