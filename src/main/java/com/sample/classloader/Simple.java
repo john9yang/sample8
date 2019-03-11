@@ -18,10 +18,13 @@ public class Simple {
 
         // Simple.test();
 
-        try {
-            Class.forName("com.sample.classloader.Simple");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Class.forName("com.sample.classloader.Simple");
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        }
+
+        Simple[] simples = new Simple[10];
+        System.out.println(simples.length);
     }
 }
