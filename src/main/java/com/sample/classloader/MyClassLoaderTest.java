@@ -1,6 +1,5 @@
 package com.sample.classloader;
 
-import javax.management.ReflectionException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
