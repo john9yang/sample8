@@ -8,6 +8,8 @@ public class Singleton {
 
     private static int y;
 
+
+
     private Singleton(){
         x++;
         y++;
