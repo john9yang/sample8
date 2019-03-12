@@ -1,4 +1,4 @@
-package com.sample.thread.designPartern;
+package com.sample.thread.designPartern.singleton;
 
 public class SingletonByEnum {
     //实例变量

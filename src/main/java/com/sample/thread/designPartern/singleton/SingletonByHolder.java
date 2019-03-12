@@ -1,4 +1,4 @@
-package com.sample.thread.designPartern;
+package com.sample.thread.designPartern.singleton;
 
 //不允许被继承
 public final class SingletonByHolder {
