@@ -18,5 +18,11 @@ public class HashMapDemo {
             Map.Entry entry = iterator.next();
             System.out.println("key:"+entry.getKey()+"-"+"value:"+entry.getValue());
         }
+
+        Map map2 = new HashMap(){
+            {
+                put("java",100);
+            }
+        };
     }
 }
