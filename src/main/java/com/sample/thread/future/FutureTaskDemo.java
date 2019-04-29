@@ -1,4 +1,4 @@
-package com.sample.forkjoin;
+package com.sample.thread.future;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
