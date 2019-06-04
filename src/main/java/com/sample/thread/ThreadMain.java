@@ -8,7 +8,8 @@ public class ThreadMain {
 		Thread tB = new ThreadB();
 		
 		tA.setDaemon(true);
-		
+		tB.setDaemon(true);
+
 		tB.start();
 		tA.start();
 		

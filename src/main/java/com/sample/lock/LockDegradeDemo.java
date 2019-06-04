@@ -19,7 +19,7 @@ public class LockDegradeDemo {
         writeLock.lock();
         try {
             i++;
-            readLock.lock();
+        readLock.lock();
         }finally {
             writeLock.unlock();
         }
