@@ -12,26 +12,26 @@ public class LambDaApp {
     public static void main(String[] args) throws Exception{
         List<String> names = Arrays.asList(new String[]{"Bela","Jani","John"});
 
-//        names.stream().filter(new Predicate<String>() {
-//            @Override
-//            public boolean test(String name) {
-//                return name.toLowerCase().startsWith("j");
-//            }
-//        }).sorted(new Comparator<String>() {
-//            @Override
-//            public int compare(String o1, String o2) {
-//                return o1.compareTo(o2);
-//            }
-//        }).forEach(new Consumer<String>() {
-//            @Override
-//            public void accept(String s) {
-//                System.out.println(s);
-//            }
-//        });
+        names.stream().filter(new Predicate<String>() {
+            @Override
+            public boolean test(String name) {
+                return name.toLowerCase().startsWith("j");
+            }
+        }).sorted(new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return o1.compareTo(o2);
+            }
+        }).forEach(new Consumer<String>() {
+            @Override
+            public void accept(String s) {
+                System.out.println(s);
+            }
+        });
 
-        names.stream().filter(name -> name.toLowerCase().startsWith("j"))
-                      .sorted(((o1, o2) -> o1.compareTo(o2)))
-                      .forEach(t-> System.out.println(t));
+//        names.stream().filter(name -> name.toLowerCase().startsWith("j"))
+//                      .sorted(((o1, o2) -> o1.compareTo(o2)))
+//                      .forEach(t-> System.out.println(t));
 
 //        Callable<Runnable> c = new Callable<Runnable>() {
 //            @Override
@@ -45,8 +45,8 @@ public class LambDaApp {
 //            }
 //        };
 //
-        Callable<Runnable> c = ()->()-> System.out.println("doing something here");
-        c.call().run();
+//        Callable<Runnable> c = ()->()-> System.out.println("doing something here");
+//        c.call().run();
 
     }
 }
