@@ -11,6 +11,7 @@ public class PreMyProgram {
      */
     public static void premain(String agentOps, Instrumentation instrumentation){
         System.out.println("====premain 方法执行:"+agentOps);
+        instrumentation.addTransformer(new MyTransformer());
     }
 
     /**
