@@ -29,7 +29,6 @@ public class Rule implements Comparable<Rule>{
 
     @Override
     public int compareTo(Rule rule) {
-        System.out.println(this+" compareTo:"+rule);
          if (getPriority() < rule.getPriority() ){
              return -1;
          } else if ( getPriority() > rule.getPriority() ){
