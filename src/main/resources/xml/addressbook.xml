@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- addressbook.xml -->
+<address_book>
+    <person>
+        <name>Tan Ah Teck</name>
+        <tel type="mobile" preferred="yes">98888888</tel>
+        <tel type="home">68888888</tel>
+        <email preferred="yes">tan@abc.com</email>
+        <email>teck@xyz.com</email>
+        <address type="home">1 Happy Ave</address>
+    </person>
+    <person>
+        <name>Mohd Ali</name>
+        <tel type="mobile" preferred="yes">97777777</tel>
+        <tel type="office">67777777</tel>
+        <email>ali@abc.com</email>
+    </person>
+</address_book>

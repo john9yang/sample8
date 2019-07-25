@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- bookstore-inlineDTD.xml -->
+<!DOCTYPE bookstore[
+    <!ELEMENT bookstore (book+)>
+    <!ELEMENT book (title, author+, category*, language?, year?, edition?, price)>
+    <!ATTLIST book ISBN CDATA #REQUIRED>
+    <!ELEMENT title    (#PCDATA)>
+    <!ELEMENT author   (#PCDATA)>
+    <!ELEMENT category (#PCDATA)>
+    <!ELEMENT language (#PCDATA)>
+    <!ELEMENT year     (#PCDATA)>
+    <!ELEMENT edition  (#PCDATA)>
+    <!ELEMENT price    (#PCDATA)>
+]>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- bookstore.xml -->
+<!-- bookstore.xml-->
+<!DOCTYPE bookstore SYSTEM "bookstore.dtd">
 <bookstore>
     <book ISBN="0123456001">
         <title>Java For Dummies</title>
