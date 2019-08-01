@@ -31,7 +31,13 @@ public class BlockQueueDemo {
 		
 		for(int i=0;i<16;i++) {
 			String log = (i+1)+" --> ";
-			bq.put(log);
+			new Thread( () -> {
+				try {
+					bq.put(log);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			} ).start();
 		}
 		
 		System.out.println("main end!");
