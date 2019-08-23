@@ -8,5 +8,6 @@ public class CompletableFutureNeverEndsExample {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         CompletableFuture<String> completableFuture = new CompletableFuture<>();
         completableFuture.get();
+        System.out.println("1111");
     }
 }

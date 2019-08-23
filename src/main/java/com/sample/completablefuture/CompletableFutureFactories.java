@@ -2,12 +2,18 @@ package com.sample.completablefuture;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
 
 public class CompletableFutureFactories {
 
     public static void main(String[] args) throws Exception {
         // we can create a completable in asynchronus mode and pass it directly a task to do
         CompletableFuture<String> completableFuture = CompletableFuture.supplyAsync(() -> {
+//            try {
+//                TimeUnit.SECONDS.sleep(30l);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
             return "100";
         });
 
