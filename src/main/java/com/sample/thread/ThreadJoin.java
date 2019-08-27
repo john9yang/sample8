@@ -8,8 +8,9 @@ import java.util.stream.IntStream;
 public class ThreadJoin {
 
     public static void main(String[] args) throws InterruptedException {
-        List<Thread> threads = IntStream.range(1,3).mapToObj(ThreadJoin::create).collect(Collectors.toList());
+        List<Thread> threads = IntStream.range(1,4).mapToObj(ThreadJoin::create).collect(Collectors.toList());
         threads.forEach(Thread::start);
+        System.out.println("all thread started");
 
         for( Thread thread : threads ){
             thread.join();
