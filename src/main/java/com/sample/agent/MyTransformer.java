@@ -21,8 +21,8 @@ public class MyTransformer implements ClassFileTransformer {
     final static Map<String, List<String>> methodMap = new HashMap<String, List<String>>();
 
     public MyTransformer() {
-        add("jhclass.demo.TimeTest.sayHello");
-        add("jhclass.demo.TimeTest.sayHello2");
+        add("agent.TimeTest.sayHello");
+        add("agent.TimeTest.sayHello2");
     }
 
     private void add(String methodString) {
@@ -39,12 +39,14 @@ public class MyTransformer implements ClassFileTransformer {
     @Override
     public byte[] transform(ClassLoader loader, String className, Class<?> classBeingRedefined, ProtectionDomain protectionDomain,
                             byte[] classfileBuffer) throws IllegalClassFormatException {
+        System.out.println("transform:"+className);
         className = className.replace("/", ".");
         if (methodMap.containsKey(className)) {// 判断加载的class的包路径是不是需要监控的类
             CtClass ctclass = null;
             try {
                 ctclass = ClassPool.getDefault().get(className);// 使用全称,用于取得字节码类<使用javassist>
                 for (String methodName : methodMap.get(className)) {
+                    System.out.println("methodName"+methodName);
                     String outputStr = "\nSystem.out.println(\"this method " + methodName
                             + " cost:\" +(endTime - startTime) +\"ms.\");";
 

@@ -24,5 +24,6 @@ public class HashMapDemo {
                 put("java",100);
             }
         };
+
     }
 }

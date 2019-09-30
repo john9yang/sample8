@@ -1,5 +1,8 @@
 package com.sample.agent;
 
+import static agent.TimeTest.sayHello;
+import static agent.TimeTest.sayHello2;
+
 import java.lang.instrument.Instrumentation;
 
 public class PreMyProgram {
@@ -23,6 +26,8 @@ public class PreMyProgram {
     }
 
     public static void main(String[] args) {
-
+         System.out.println("main");
+        sayHello();
+        sayHello2("hello world222222222");
     }
 }
