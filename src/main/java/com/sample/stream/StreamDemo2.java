@@ -1,5 +1,6 @@
 package com.sample.stream;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -14,6 +15,9 @@ public class StreamDemo2 {
         mylist.add(24);
         mylist.add(17);
         mylist.add(5);
+
+        Integer result = mylist.stream().filter( i -> i%81 == 0).findAny().orElse(0);
+        System.out.println("result:"+result);
 
 //        Optional<Integer> productObj = mylist.stream().reduce((a,b) -> a*b);
         Optional<Integer> productObj = mylist.parallelStream().reduce((a,b) -> a*b);
