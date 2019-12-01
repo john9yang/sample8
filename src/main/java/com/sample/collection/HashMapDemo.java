@@ -19,11 +19,15 @@ public class HashMapDemo {
             System.out.println("key:"+entry.getKey()+"-"+"value:"+entry.getValue());
         }
 
-        Map map2 = new HashMap(){
+
+        Map<String,Object> map2 = new HashMap(){
             {
                 put("java",100);
+                put("name","john");
+                put("age",30);
             }
         };
 
+        map2.entrySet().stream().forEach(e -> System.out.println("stream key:"+e.getKey()));
     }
 }
