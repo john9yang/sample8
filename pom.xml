@@ -59,6 +59,7 @@
         <artifactId>lombok-maven-plugin</artifactId>
         <version>1.18.10.0</version>
         <executions>
+          <!--
           <execution>
             <phase>generate-sources</phase>
             <goals>
@@ -69,6 +70,7 @@
               <sourceDirectory>src/main/java</sourceDirectory>
             </configuration>
           </execution>
+          -->
         </executions>
       </plugin>
     </plugins>

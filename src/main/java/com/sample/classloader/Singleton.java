@@ -2,6 +2,7 @@ package com.sample.classloader;
 
 public class Singleton {
 
+
     private static Singleton instance = new Singleton();
 
     private static int x = 0;
