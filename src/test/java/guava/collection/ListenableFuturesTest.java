@@ -44,13 +44,13 @@ public class ListenableFuturesTest {
             }
         }, executorService);
 
-//        try {
-//            System.out.println("callBack:"+futureTask.get());
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        } catch (ExecutionException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            System.out.println("callBack:"+futureTask.get());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
 
         endSignal.await();
         assertThat(callbackRan, is(true));
@@ -58,22 +58,22 @@ public class ListenableFuturesTest {
 
     @Test
     public void testRunListenableFutureWithFutureCallbackSuccess() throws Exception {
-//        ListenableFuture<String> futureTask = executorService.submit(new Task(startSignal));
-//        FutureCallbackImpl callback = new FutureCallbackImpl();
-//        Futures.addCallback(futureTask, callback);
-//        startSignal.countDown();
-//        endSignal.await();
-//        assertThat(callback.getCallbackResult(), is("Task Done successfully"));
+        ListenableFuture<String> futureTask = executorService.submit(new Task(startSignal));
+        FutureCallbackImpl callback = new FutureCallbackImpl();
+        Futures.addCallback(futureTask, callback,executorService);
+        startSignal.countDown();
+        endSignal.await();
+        assertThat(callback.getCallbackResult(), is("Task Done successfully"));
     }
 
     @Test
     public void testRunListenableFutureWithFutureCallbackFailure() throws Exception {
-//        ListenableFuture<String> futureTask = executorService.submit(new Task(null));
-//        FutureCallbackImpl callback = new FutureCallbackImpl();
-//        Futures.addCallback(futureTask, callback);
-//        //startSignal.countDown();  don't call countdown
-//        endSignal.await();
-//        assertThat(callback.getCallbackResult(), is("java.lang.NullPointerException"));
+        ListenableFuture<String> futureTask = executorService.submit(new Task(null));
+        FutureCallbackImpl callback = new FutureCallbackImpl();
+        Futures.addCallback(futureTask, callback,executorService);
+        startSignal.countDown();  //don't call countdown
+        endSignal.await();
+        assertThat(callback.getCallbackResult(), is("java.lang.NullPointerException"));
     }
 
 
