@@ -14,7 +14,7 @@ public class CyclicBarrierDemo {
 		
 		worker1.start();
 		worker2.start();
-		//worker3.start();
+		worker3.start();
 		
 		System.out.println("Main thread end!");
 	}
