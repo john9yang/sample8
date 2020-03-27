@@ -12,9 +12,9 @@ public class CallableDemo implements Callable<String> {
     }
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-        CallableDemo callableDemo = new CallableDemo();
-        FutureTask<String> stringFutureTask = new FutureTask<>(callableDemo);
-        new Thread(stringFutureTask).start();
-        System.out.println(stringFutureTask.get());
+            CallableDemo callableDemo = new CallableDemo();
+            FutureTask<String> stringFutureTask = new FutureTask<>(callableDemo);
+            new Thread(stringFutureTask).start();
+            System.out.println(stringFutureTask.get());
     }
 }
