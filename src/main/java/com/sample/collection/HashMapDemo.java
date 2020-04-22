@@ -5,10 +5,13 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * @author John_Yang
+ */
 public class HashMapDemo {
 
     public static void main(String[] args) {
-        Map map = new HashMap();
+        Map map = new HashMap(4);
         map.put("java",80);
         map.put("java",90);
 
@@ -20,7 +23,7 @@ public class HashMapDemo {
         }
 
 
-        Map<String,Object> map2 = new HashMap(){
+        Map<String,Object> map2 = new HashMap(4){
             {
                 put("java",100);
                 put("name","john");
