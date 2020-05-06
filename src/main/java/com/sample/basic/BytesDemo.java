@@ -17,5 +17,12 @@ public class BytesDemo {
     } catch (UnsupportedEncodingException e) {
       e.printStackTrace();
     }
+    System.out.println("--------------------------");
+    byte b = -112;
+    int d = 0xff;
+    int c  = b & d;
+    int e = c + 0x100;
+    System.out.println(Integer.toString(e,16).substring(1));
+    System.out.println(Integer.toString(e,16));
   }
 }
