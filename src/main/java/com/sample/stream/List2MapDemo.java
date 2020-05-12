@@ -24,6 +24,8 @@ public class List2MapDemo {
             System.out.println(v);
         });
 
+        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+
         Map<Integer,Book> conMapWithDupKey = bookList.stream().collect(Collectors.toMap(Book::getReleaseYear,Function.identity(),
                 (o1,o2)->o1, ConcurrentHashMap::new));
         conMapWithDupKey.forEach((k,v)->{
