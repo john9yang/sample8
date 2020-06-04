@@ -1,5 +1,6 @@
 package com.sample.basic;
 
+import java.text.MessageFormat;
 import java.util.StringTokenizer;
 
 public class StringTokenizerDemo {
@@ -15,5 +16,9 @@ public class StringTokenizerDemo {
 
         String world="world";
         System.out.println(hello.concat("_").concat(world));
+
+        String message = "test";
+        MessageFormat formatter = new MessageFormat(message);
+        System.out.println(formatter.format(new Object[]{}));
     }
 }
