@@ -12,5 +12,8 @@ public class StringStreamDemo {
                        .map(String::toUpperCase)
                        .sorted()
                        .forEach(System.out::println);
+
+        int sumOflenth = myList.stream().map(x->x.length()).mapToInt(x->x.intValue()).sum();
+        System.out.println(sumOflenth);
     }
 }
