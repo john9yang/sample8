@@ -124,6 +124,12 @@
       <version>28.2-jre</version>
     </dependency>
 
+    <dependency>
+      <groupId>com.alibaba.csp</groupId>
+      <artifactId>sentinel-core</artifactId>
+      <version>1.7.1</version>
+    </dependency>
+
   </dependencies>
 
 </project>
