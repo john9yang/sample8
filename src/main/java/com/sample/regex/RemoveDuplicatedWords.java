@@ -15,6 +15,7 @@ public class RemoveDuplicatedWords {
         }
 
         System.out.println(input);
+
     }
 
 
