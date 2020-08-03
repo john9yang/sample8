@@ -12,6 +12,9 @@ public class RemoveDuplicatedWords {
         Matcher m = pattern.matcher(input);
         while( m.find() ){
             input = input.replaceAll(m.group(),m.group(1));
+            System.out.println("group:"+m.group());
+            System.out.println("group1:"+m.group(1));
+            System.out.println("Located ["+ m.group()+"] startint at "+ m.start()+" ending at "+(m.end()-1));
         }
 
         System.out.println(input);
