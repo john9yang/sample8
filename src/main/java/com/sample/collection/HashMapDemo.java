@@ -1,9 +1,6 @@
 package com.sample.collection;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author John_Yang
@@ -14,6 +11,7 @@ public class HashMapDemo {
         Map map = new HashMap(4);
         map.put("java",80);
         map.put("java",90);
+
 
         Set<Map.Entry> entrySet = map.entrySet();
         Iterator<Map.Entry> iterator =  entrySet.iterator();
@@ -32,5 +30,16 @@ public class HashMapDemo {
         };
 
         map2.entrySet().stream().forEach(e -> System.out.println("stream key:"+e.getKey()));
+
+        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+        HashMap<List<String>, Integer> count = new HashMap<>();
+        count.put(new ArrayList<>(),1);
+        System.out.println("count:"+count.get(new ArrayList()));
+
+        System.out.println(new ArrayList<>().hashCode());
+        System.out.println(new ArrayList<>().hashCode());
+
+        System.out.println("indentify:"+System.identityHashCode(new ArrayList<>()));
+        System.out.println("indentify:"+System.identityHashCode(new ArrayList<>()));
     }
 }
