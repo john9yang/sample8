@@ -41,5 +41,8 @@ public class HashMapDemo {
 
         System.out.println("indentify:"+System.identityHashCode(new ArrayList<>()));
         System.out.println("indentify:"+System.identityHashCode(new ArrayList<>()));
+
+        System.out.println(new String().hashCode());
+        System.out.println(new String().hashCode());
     }
 }
